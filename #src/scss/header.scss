@@ -27,7 +27,7 @@
   // .header__nav-element
 
   &__nav-element {
-    min-height: rem(27);
+    height: 100%;
     @media (min-width: $pc) {
       margin-right: rem(37);
     }

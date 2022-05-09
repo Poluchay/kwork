@@ -135,27 +135,6 @@ h6 {
   min-width: 0;
 }
 
-.page__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.page__main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  max-width: calc(100% - 16.875rem);
-}
-
-.page__sidebar {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  width: 15rem;
-  margin-right: 1.875rem;
-}
-
 /*
 (i) Стили будут применяться ко 
 всем классам содержащим *__container
@@ -163,7 +142,7 @@ h6 {
 Снипет (HTML): cnt
 */
 
-[class*=__container] {
+[class$=__container] {
   max-width: 82.5rem;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -208,7 +187,7 @@ h6 {
 }
 
 .header__nav-element {
-  min-height: 1.6875rem;
+  height: 100%;
 }
 
 .nav-element {
@@ -460,6 +439,10 @@ h6 {
 }
 
 @media (min-width: 84.375em) {
+  [class$=__container-left] {
+    padding-left: calc((100% - 1320px) / 2);
+  }
+
   .header__nav-element {
     margin-right: 2.3125rem;
   }
@@ -470,6 +453,10 @@ h6 {
 }
 
 @media (max-width: 84.375em) {
+  [class$=__container-left] {
+    margin: 0 0.9375rem;
+  }
+
   .header__menu {
     margin: 0 auto;
   }

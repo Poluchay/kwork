@@ -66,32 +66,6 @@ body {
   }
 }
 
-.page {
-  // .page__wrapper
-
-  &__wrapper {
-    display: flex;
-  }
-
-  // .page__main
-
-  &__main {
-    flex: 1;
-    max-width: calc(100% - rem(270));
-  }
-
-  // .page__sidebar
-
-  &__sidebar {
-    flex: none;
-    width: rem(240);
-    margin-right: rem(30);
-  }
-}
-
-.lt-sidebar {
-}
-
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
 /*
@@ -102,7 +76,7 @@ body {
 */
 
 // Отзывчивая
-[class*="__container"] {
+[class$="__container"] {
   @if ($maxWidthContainer>0) {
     max-width: rem($maxWidthContainer);
     box-sizing: content-box;
@@ -110,6 +84,16 @@ body {
   }
   @if ($containerPadding>0) {
     padding: 0 rem(math.div($containerPadding, 2));
+  }
+}
+[class$="__container-left"] {
+  @if ($maxWidthContainer>0) {
+    @media (min-width: $pc) {
+      padding-left: calc((100% - #{$maxWidthContainer + px}) / 2);
+    }
+    @media (max-width: $pc) {
+      margin: 0 rem(math.div($containerPadding, 2));
+    }
   }
 }
 
