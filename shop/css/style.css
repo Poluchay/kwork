@@ -145,6 +145,7 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  height: 120vh;
   max-width: calc(100% - 16.875rem);
 }
 
